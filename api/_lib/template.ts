@@ -118,8 +118,9 @@ export function getHtml(parsedReq: ParsedRequest) {
             <div class="spacer">
             <div class="logo-wrapper">
                 ${images.map((img, i) =>
-                    getPlusSign(i) + getImage(img, widths[i], heights[i])
+                    getPlusSign(i) + getImage(img, widths[i], heights[i], theme)
                 ).join('')}
+                <span class="heading"><strong>jackyef.com</strong></span>
             </div>
             <div class="spacer">
             <div class="heading">${emojify(
@@ -131,10 +132,11 @@ export function getHtml(parsedReq: ParsedRequest) {
 </html>`;
 }
 
-function getImage(src: string, width ='auto', height = '225') {
+function getImage(src: string, width ='auto', height = '225', theme = 'light') {
     return `<img
         class="logo"
         alt="Generated Image"
+        ${theme === 'dark' ? `style="filter: invert(1)"` : ''}
         src="${sanitizeHtml(src)}"
         width="${sanitizeHtml(width)}"
         height="${sanitizeHtml(height)}"
