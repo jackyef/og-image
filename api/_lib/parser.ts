@@ -5,6 +5,8 @@ import { ParsedRequest, Theme } from './types';
 export function parseRequest(req: IncomingMessage) {
     console.log('HTTP ' + req.url);
     const { pathname, query } = parse(req.url || '/', true);
+
+    // @ts-ignore
     const { fontSize, images, widths, heights, theme, md } = (query || {});
 
     if (Array.isArray(fontSize)) {
@@ -29,8 +31,8 @@ export function parseRequest(req: IncomingMessage) {
     const parsedRequest: ParsedRequest = {
         fileType: extension === 'jpeg' ? extension : 'png',
         text: decodeURIComponent(text),
-        theme: theme === 'dark' ? 'dark' : 'light',
-        md: md === '1' || md === 'true',
+        theme: 'dark',
+        md: true,
         fontSize: fontSize || '96px',
         images: getArray(images),
         widths: getArray(widths),
