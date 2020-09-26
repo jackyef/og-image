@@ -96,7 +96,7 @@ function getCss(theme: string, fontSize: string) {
     
     .logo-heading {
         font-family: 'Inter', sans-serif;
-        font-size: 150px;
+        font-size: 120px;
         font-style: normal;
         color: ${foreground};
         line-height: 1.8;
