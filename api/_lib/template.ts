@@ -94,6 +94,14 @@ function getCss(theme: string, fontSize: string) {
         vertical-align: -0.1em;
     }
     
+    .logo-heading {
+        font-family: 'Inter', sans-serif;
+        font-size: 150px;
+        font-style: normal;
+        color: ${foreground};
+        line-height: 1.8;
+    }
+    
     .heading {
         font-family: 'Inter', sans-serif;
         font-size: ${sanitizeHtml(fontSize)};
@@ -120,7 +128,7 @@ export function getHtml(parsedReq: ParsedRequest) {
                 ${images.map((img, i) =>
                     getPlusSign(i) + getImage(img, widths[i], heights[i], theme)
                 ).join('')}
-                <span class="heading"><strong>jackyef.com</strong></span>
+                <span class="logo-heading"><strong>jackyef.com</strong></span>
             </div>
             <div class="spacer">
             <div class="heading">${emojify(
