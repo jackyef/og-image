@@ -124,23 +124,22 @@ export function getHtml(parsedReq: ParsedRequest) {
     <body>
         <div>
             <div class="spacer">
+            <div class="heading">${emojify(
+                md ? marked(text) : sanitizeHtml(text)
+            )}
+            </div>
+            <div class="spacer">
             <div class="logo-wrapper">
                 ${images.map((img, i) =>
                     getPlusSign(i) + getImage(img, widths[i], heights[i], theme)
                 ).join('')}
-                <span class="logo-heading"><strong>jackyef.com</strong></span>
-            </div>
-            <div class="spacer">
-            <div class="heading">${emojify(
-                md ? marked(text) : sanitizeHtml(text)
-            )}
             </div>
         </div>
     </body>
 </html>`;
 }
 
-function getImage(src: string, width ='auto', height = '225', theme = 'light') {
+function getImage(src: string, width ='auto', height = '120', theme = 'light') {
     return `<img
         class="logo"
         alt="Generated Image"
