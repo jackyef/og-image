@@ -62,6 +62,7 @@ function getCss(theme: string, fontSize: string) {
     .avatar {
       position: absolute;
       left: -120px;
+      height: 100%;
     }
 
     code {
@@ -99,8 +100,8 @@ function getCss(theme: string, fontSize: string) {
         margin-left: 38%;
         display: flex;
         height: 100%;
-        max-height: 420px;
-        padding: 240px 80px 240px 0;
+        max-height: 500px;
+        padding: 160px 80px 160px 0;
         display: -webkit-box;
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;  
