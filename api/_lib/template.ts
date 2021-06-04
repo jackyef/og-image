@@ -19,7 +19,7 @@ const avatar = `data:image/png;base64,${readFileSync(
   `${__dirname}/../_images/3d-avatar-optimized.png`
 ).toString("base64")}`;
 
-function getCss(theme: string, fontSize: string) {
+function getCss(theme: string, _fontSize: string) {
   let background = "white";
   let foreground = "black";
   let radial = "lightgray";
@@ -93,7 +93,7 @@ function getCss(theme: string, fontSize: string) {
 
     .heading {
         font-family: 'Inter', sans-serif;
-        font-size: ${sanitizeHtml(fontSize)};
+        font-size: 100px;
         font-style: normal;
         color: ${foreground};
         line-height: 1.8;
